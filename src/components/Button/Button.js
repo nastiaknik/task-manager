@@ -1,4 +1,4 @@
-import { Btn, SelectedBtn } from './Button.styled';
+import { Btn } from './Button.styled';
 
 export const Button = ({
   selected = false,
@@ -7,16 +7,8 @@ export const Button = ({
   ...otherProps
 }) => {
   return (
-    <>
-      {selected ? (
-        <SelectedBtn type={type} {...otherProps}>
-          {children}
-        </SelectedBtn>
-      ) : (
-        <Btn type={type} {...otherProps}>
-          {children}
-        </Btn>
-      )}
-    </>
+    <Btn type={type} selected={selected} {...otherProps}>
+      {children}
+    </Btn>
   );
 };

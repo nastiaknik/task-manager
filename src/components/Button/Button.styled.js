@@ -7,8 +7,8 @@ export const Btn = styled.button`
   border: none;
   font: inherit;
   cursor: pointer;
-  background-color: #e2e5e8;
-  color: inherit;
+  background-color: ${({ selected }) => (selected ? '#1976d2' : '#e2e5e8')};
+  color: ${({ selected }) => (selected ? '#fff' : 'inherit')};
 
   &:hover {
     background-color: #1976d2;
@@ -19,9 +19,4 @@ export const Btn = styled.button`
     background-color: #1565c0;
     color: #fff;
   }
-`;
-
-export const SelectedBtn = styled(Btn)`
-  background-color: #1976d2;
-  color: #fff;
 `;
