@@ -26,8 +26,17 @@ const tasksSlice = createSlice({
         }
       }
     },
+    deleteCompleted(state) {
+      for (const task of state) {
+        if (task.completed === true) {
+          state.splice(state.indexOf(task), 1);
+          break;
+        }
+      }
+    },
   },
 });
 
-export const { addTask, deleteTask, toggleCompleted } = tasksSlice.actions;
+export const { addTask, deleteTask, toggleCompleted, deleteCompleted } =
+  tasksSlice.actions;
 export const tasksReducer = tasksSlice.reducer;

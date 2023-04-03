@@ -6,6 +6,7 @@ import {
   toggleCompleted,
   setStatusFilter,
 } from './actions';
+import { deleteCompleted } from './tasksSlice';
 
 const tasksInitialState = [
   { id: 0, text: 'Learn HTML and CSS', completed: true },
@@ -29,6 +30,9 @@ export const tasksReducer = createReducer(tasksInitialState, {
       }
       return { ...task, completed: !task.completed };
     });
+  },
+  [deleteCompleted]: state => {
+    return state.filter(task => !task.completed);
   },
 });
 
