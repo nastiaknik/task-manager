@@ -27,12 +27,7 @@ const tasksSlice = createSlice({
       }
     },
     deleteCompleted(state) {
-      for (const task of state) {
-        if (task.completed === true) {
-          state.splice(state.indexOf(task), 1);
-          break;
-        }
-      }
+      return state.filter(task => !task.completed);
     },
   },
 });
